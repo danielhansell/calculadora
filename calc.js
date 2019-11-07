@@ -119,14 +119,14 @@ function apagar(){
 function ponto(){
 	let atual = document.getElementById("resultado").innerHTML;
 	let junto = document.getElementById("pt").innerHTML;
-	b+=1;
-	document.getElementById("resultado").innerHTML = atual + junto;
+	b=b+1;
 	if(b==2){
 		if(d!==0){
 			c=c+1;
 			b=b-1;
 		}
 	}
+	document.getElementById("resultado").innerHTML = atual + junto;
 }
 
 function showResult(){
@@ -136,7 +136,7 @@ function showResult(){
 	let multiplicacao = atual.indexOf("x");
 	let divisao = atual.indexOf("÷");
 	
-	if(a==1 && b==1 && c==0 && d==1){
+	if(a===1 && b===1 && c===0 && d===1){
 		if(soma !== -1){
 			array = atual.split("+", 2);
 			res = parseFloat(array[0]) + parseFloat(array[1]);
