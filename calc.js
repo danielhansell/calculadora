@@ -16,6 +16,9 @@ document.getElementById("sr").addEventListener("click", showResult);
 document.getElementById("ap").addEventListener("click", apagar);
 document.getElementById("pt").addEventListener("click", ponto);
 var a=0;
+var b=0;
+var c=0;
+var d=0;
 
 function n1(){ 
 	let atual = document.getElementById("resultado").innerHTML;
@@ -81,6 +84,7 @@ function o1(){
 	let atual = document.getElementById("resultado").innerHTML;
 	let junto = document.getElementById("s").innerHTML;
 	a=a+1;
+	d=d+1;
 	document.getElementById("resultado").innerHTML = atual + junto;
 }
 
@@ -88,6 +92,7 @@ function o2(){
 	let atual = document.getElementById("resultado").innerHTML;
 	let junto = document.getElementById("r").innerHTML;
 	a=a+1;
+	d=d+1;
 	document.getElementById("resultado").innerHTML = atual + junto;
 }
 
@@ -95,6 +100,7 @@ function o3(){
 	let atual = document.getElementById("resultado").innerHTML;
 	let junto = document.getElementById("m").innerHTML;
 	a=a+1;
+	d=d+1;
 	document.getElementById("resultado").innerHTML = atual + junto;
 }
 
@@ -102,6 +108,7 @@ function o4(){
 	let atual = document.getElementById("resultado").innerHTML;
 	let junto = document.getElementById("d").innerHTML;
 	a=a+1;
+	d=d+1;
 	document.getElementById("resultado").innerHTML = atual + junto;
 }
 function apagar(){
@@ -112,8 +119,11 @@ function apagar(){
 function ponto(){
 	let atual = document.getElementById("resultado").innerHTML;
 	let junto = document.getElementById("pt").innerHTML;
-	a+=1;
+	b+=1;
 	document.getElementById("resultado").innerHTML = atual + junto;
+	if(b==2 && d!==0){
+		c+=1;
+	}
 }
 
 function showResult(){
@@ -121,9 +131,9 @@ function showResult(){
 	let soma = atual.indexOf("+");
 	let subtracao = atual.indexOf("-");
 	let multiplicacao = atual.indexOf("x");
-	let divisao = atual.indexOf("?");
+	let divisao = atual.indexOf("÷");
 	
-	if(a==1){
+	if(a==1 && b==2){
 		if(soma !== -1){
 			array = atual.split("+", 2);
 			res = parseFloat(array[0]) + parseFloat(array[1]);
@@ -140,7 +150,7 @@ function showResult(){
 			document.getElementById("resultado").innerHTML = res;
 		}
 		else if (divisao !== -1){
-			array = atual.split("?", 2);
+			array = atual.split("÷", 2);
 			res = parseFloat(array[0]) / parseFloat(array[1]);
 			document.getElementById("resultado").innerHTML = res;
 		}
@@ -149,4 +159,7 @@ function showResult(){
 		document.getElementById("resultado").innerHTML = "";
 	}
 	a=0;
+	b=0;
+	c=0;
+	d=0;
 }
