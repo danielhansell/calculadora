@@ -161,15 +161,6 @@ function showResult(){
 	else if(a!==1){
 		document.getElementById("resultado").innerHTML = "";
 	}
-	else if(b!==1){
-		document.getElementById("resultado").innerHTML = "";
-	}
-	else if(c!==0){
-		document.getElementById("resultado").innerHTML = "";
-	}
-	else if(d!==1){
-		document.getElementById("resultado").innerHTML = "";
-	}
 	a=0;
 	b=0;
 	c=0;
