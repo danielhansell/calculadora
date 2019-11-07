@@ -136,7 +136,7 @@ function showResult(){
 	let multiplicacao = atual.indexOf("x");
 	let divisao = atual.indexOf("÷");
 	
-	if(a===1){
+	if(a==1){
 		if(soma !== -1){
 			array = atual.split("+", 2);
 			res = parseFloat(array[0]) + parseFloat(array[1]);
