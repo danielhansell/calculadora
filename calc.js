@@ -122,7 +122,8 @@ function ponto(){
 	b+=1;
 	document.getElementById("resultado").innerHTML = atual + junto;
 	if(b==2 && d!==0){
-		c+=1;
+		c=c+1;
+		b=b-1;
 	}
 }
 
@@ -133,7 +134,7 @@ function showResult(){
 	let multiplicacao = atual.indexOf("x");
 	let divisao = atual.indexOf("÷");
 	
-	if(a==1 && b==2){
+	if(a==1 && b==1 && c==1){
 		if(soma !== -1){
 			array = atual.split("+", 2);
 			res = parseFloat(array[0]) + parseFloat(array[1]);
