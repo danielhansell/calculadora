@@ -121,9 +121,11 @@ function ponto(){
 	let junto = document.getElementById("pt").innerHTML;
 	b+=1;
 	document.getElementById("resultado").innerHTML = atual + junto;
-	if(b==2 && d!==0){
-		c=c+1;
-		b=b-1;
+	if(b==2){
+		if(d!==0){
+			c=c+1;
+			b=b-1;
+		}
 	}
 }
 
@@ -134,31 +136,42 @@ function showResult(){
 	let multiplicacao = atual.indexOf("x");
 	let divisao = atual.indexOf("÷");
 	
-	if(a==1 && b==1 && c==1){
-		if(soma !== -1){
-			array = atual.split("+", 2);
-			res = parseFloat(array[0]) + parseFloat(array[1]);
-			document.getElementById("resultado").innerHTML = res;
-		}
-		else if(subtracao !== -1){
-			array = atual.split("-", 2);
-			res = parseFloat(array[0]) - parseFloat(array[1]);
-			document.getElementById("resultado").innerHTML = res;
-		}
-		else if (multiplicacao !== -1){
-			array = atual.split("x", 2);
-			res = parseFloat(array[0]) * parseFloat(array[1]);
-			document.getElementById("resultado").innerHTML = res;
-		}
-		else if (divisao !== -1){
-			array = atual.split("÷", 2);
-			res = parseFloat(array[0]) / parseFloat(array[1]);
-			document.getElementById("resultado").innerHTML = res;
-		}
+	if(a==1){
+		if(b==1){
+			if(c==1){
+				if(soma !== -1){
+					array = atual.split("+", 2);
+					res = parseFloat(array[0]) + parseFloat(array[1]);
+					document.getElementById("resultado").innerHTML = res;
+				}
+				else if(subtracao !== -1){
+					array = atual.split("-", 2);
+					res = parseFloat(array[0]) - parseFloat(array[1]);
+					document.getElementById("resultado").innerHTML = res;
+				}
+				else if (multiplicacao !== -1){
+					array = atual.split("x", 2);
+					res = parseFloat(array[0]) * parseFloat(array[1]);
+					document.getElementById("resultado").innerHTML = res;
+				}
+				else if (divisao !== -1){
+					array = atual.split("÷", 2);
+					res = parseFloat(array[0]) / parseFloat(array[1]);
+					document.getElementById("resultado").innerHTML = res;
+				}
+	}
+	}
 	}
 	else if(a!==1){
 		document.getElementById("resultado").innerHTML = "";
 	}
+	else if(b!==1){
+		document.getElementById("resultado").innerHTML = "";
+	}
+	else if(c!==1){
+		document.getElementById("resultado").innerHTML = "";
+	}
+	
 	a=0;
 	b=0;
 	c=0;
