@@ -136,7 +136,7 @@ function showResult(){
 	let multiplicacao = atual.indexOf("x");
 	let divisao = atual.indexOf("÷");
 	
-	if(a==1 && b==1 && c==1){
+	if(a==1 && b==1 && c==1 && d==1){
 		if(soma !== -1){
 			array = atual.split("+", 2);
 			res = parseFloat(array[0]) + parseFloat(array[1]);
@@ -165,6 +165,9 @@ function showResult(){
 		document.getElementById("resultado").innerHTML = "";
 	}
 	else if(c!==1){
+		document.getElementById("resultado").innerHTML = "";
+	}
+	else if(d!==1){
 		document.getElementById("resultado").innerHTML = "";
 	}
 	a=0;
